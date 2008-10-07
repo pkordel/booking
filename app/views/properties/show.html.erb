@@ -7,8 +7,10 @@
 	</dl>
 </div>
 <div id="rooms">
+	<%- unless @property.rooms.blank? -%>
 	<h2>Rooms</h2>
 	<%= render :partial => "rooms/room", :collection => @property.rooms %>
+	<%- end -%>
 </div>
 
 <%= link_to 'Back', properties_path %>
