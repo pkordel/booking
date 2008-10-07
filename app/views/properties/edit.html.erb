@@ -1,30 +1,12 @@
-<fieldset>
-	<legend>Editing property</legend>
-	<% form_for(@property) do |f| %>
-	  <%= f.error_messages %>
-	  <p>
-	    <%= f.label :name %><br />
-	    <%= f.text_field :name %>
-	  </p>
-	  <p>
-	    <%= f.label :street %><br />
-	    <%= f.text_field :street %>
-	  </p>
-	  <p>
-	    <%= f.label :city %><br />
-	    <%= f.text_field :city %>
-	  </p>
-	  <p>
-	    <%= f.label :postalcode %><br />
-	    <%= f.text_field :postalcode %>
-	  </p>
-	  <p>
-	    <%= f.submit "Update" %>
-	  </p>
-	<% end %>
-</fieldset>
-
-
-
-<%= link_to 'Show', @property %> |
-<%= link_to 'Back', properties_path %>
+<% form_for(@property) do |f| %>
+  <%= f.error_messages %>
+  <fieldset id="property">
+		<legend>Edit property</legend>
+   	<%= f.label :name %><%= f.text_field :name %>
+    <%= f.label :street %><%= f.text_field :street %>
+    <%= f.label :city %><%= f.text_field :city %>
+    <%= f.label :postalcode %><%= f.text_field :postalcode %><br />
+	  <%= f.submit "Update", :class => 'button' %>
+		<%= button_to('Cancel', '', :class => "button",:onclick => "window.location = \"#{properties_path}\";return false") %>
+  </fieldset>
+<% end %>
