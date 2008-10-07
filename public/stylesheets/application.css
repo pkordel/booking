@@ -82,3 +82,57 @@ div#right {
 div#content_box {
 	margin-top: 135px;
 }
+
+form {
+	margin: 3em;
+	width: 65%;
+}
+
+fieldset {
+	background-color: #dfdfdf;
+	border: 1px solid #ccc;
+	margin: 2em 0;
+	padding: 1em;
+}
+
+label {
+	display: block;
+	font-weight: bold;
+	float: left;
+	clear: left;
+	width: 8em;
+	padding-right: .3em;
+	text-align: right;
+	line-height: 1.8em;
+}
+
+input {
+	margin: 0 0 .5em 0;
+	display: block;
+	float: left;
+}
+
+br {
+	clear: both;
+}
+
+legend {
+	font-size: 123.1%;
+	font-weight: bold;
+	position: relative;
+	top: -.4em;
+}
+
+input {
+	width: 12em;
+}
+
+label {
+	float: left;
+	margin-right: 1em;
+}
+
+.button {
+	width: 5em;
+	margin-top: 1em;
+}
