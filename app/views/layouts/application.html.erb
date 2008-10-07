@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+	"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<title><%= params[:controller].titleize %></title>
+	<%= stylesheet_link_tag 'application' %>
+	<%= javascript_include_tag :defaults %>
+</head>
+
+<body>
+	<div id="wrapper">
+  	<noscript>
+  		<div id="noscript">
+  			<%= "[This web application requires javascript.]" %>
+  		</div>
+  	</noscript>
+		<div id="right-wrap">
+  		<div id="right">
+				<div id="content_box">
+					<p style="color: green"><%= flash[:notice] %></p>	
+					<%= yield %>
+				</div>
+  		</div>
+  	</div>
+		<div id="left">
+			<div id="logotype"></div>
+  	</div>
+	</div>
+</body>
+</html>

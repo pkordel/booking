@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <th>Property</th>
+    <th>Street</th>
+    <th>City</th>
+    <th>Postalcode</th>
+		<th>Rooms</th>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
+  </tr>
+
+<% for property in @properties %>
+  <tr>
+    <td><%= link_to h(property.name), property %></td>
+    <td><%=h property.street %></td>
+    <td><%=h property.city %></td>
+    <td><%=h property.postalcode %></td>
+		<td><%= property.rooms.size %></td>
+    <td><%= link_to 'Edit', edit_property_path(property) %></td>
+    <td><%= link_to 'Destroy', property, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New property', new_property_path %>
