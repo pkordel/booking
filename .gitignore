@@ -5,3 +5,4 @@ debug.log
 config/database.yml
 *~
 ._*
+db/*.sqlite3
