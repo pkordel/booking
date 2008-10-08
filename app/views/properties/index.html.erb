@@ -16,8 +16,8 @@
     <td><%=h property.city %></td>
     <td><%=h property.postalcode %></td>
 		<td><%= property.rooms.size %></td>
-    <td><%= link_to 'Edit', edit_property_path(property) %></td>
-    <td><%= link_to 'Destroy', property, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to image_tag("building_edit.png", :class => ""), edit_property_path(property), { :title => "Edit property" } %></td>
+    <td><%= link_to image_tag("building_delete.png", :class => ""), property, { :confirm => 'Are you sure?', :method => :delete, :title => "Delete property" } %></td>
   </tr>
 <% end %>
 </table>

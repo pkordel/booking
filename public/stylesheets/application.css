@@ -167,7 +167,11 @@ td {
 }
 
 tr.odd {
-	background-color: #dfdfdf;
+	background-color: #cfcfcf;
+}
+
+tr.even {
+	background-color: #efefef;
 }
 
 dl {
