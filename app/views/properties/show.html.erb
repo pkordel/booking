@@ -1,11 +1,28 @@
-<div id="property">
-	<dl>
-		<dt><%=h @property.name %></dt>
-		<dd><%=h @property.street %></dd>
-		<dd><%=h @property.postalcode %> <%=h @property.city %></dd>
-		<dd><small><%= link_to "[ edit ]", edit_property_path(@property) %></small></dd>
-	</dl>
+<div id="show">
+	<b class="top">
+		<b class="b1"></b>
+    <b class="b2"></b>
+    <b class="b3"></b>
+    <b class="b4"></b
+	</b>
+	<div id="property">
+		<dl>
+			<dt><%=h @property.name %></dt>
+			<dd><%=h @property.street %></dd>
+			<dd><%=h @property.postalcode %> <%=h @property.city %></dd>
+			<dd><small>
+			<%= link_to "[ edit ]", edit_property_path(@property) %> <%= link_to "[ cancel ]", properties_path %>
+			</small></dd>
+		</dl>
+	</div>
+	<b class="bottom">
+    <b class="b4"></b>
+    <b class="b3"></b>
+    <b class="b2"></b>
+    <b class="b1"></b>
+  </b>
 </div>
+
 <div id="rooms">
 	<%- unless @property.rooms.blank? -%>
 	<h2>Rooms</h2>
@@ -13,4 +30,3 @@
 	<%- end -%>
 </div>
 
-<%= link_to 'Back', properties_path %>

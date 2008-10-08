@@ -6,7 +6,7 @@
 body { background-color: #fff; color: #333; }
 
 body, p, ol, ul, td {
-  font-family: verdana;
+  font-family: "Lucida Grande";
   font-size:   100%;
   line-height: 138.5%;
 }
@@ -17,9 +17,9 @@ pre {
   font-size: 85%;
 }
 
-a { color: #000; }
+a { color: #333; text-decoration: none; }
 a:visited { color: #666; }
-a:hover { color: #fff; background-color:#000; }
+a:hover { color: #fff; background-color:#333; }
 
 .fieldWithErrors {
   padding: 2px;
@@ -95,6 +95,12 @@ fieldset {
 	padding: 1em;
 }
 
+legend {
+	background-color: #efefef;
+	border: 1px solid #ccc;
+	padding: .4em;
+}
+
 label {
 	display: block;
 	font-weight: bold;
@@ -137,3 +143,90 @@ label {
 	margin-top: 1em;
 	margin-left: 1em;
 }
+
+table {
+	width: 90%;
+	line-height: 1.5em;
+	border: 0;
+}
+
+th {
+	text-align: left;
+	border: 0;
+	padding: 0 .5em;
+}
+
+tr {
+	border: 1px solid #666;
+}
+
+td {
+	color: #666;
+	border: 1px solid #666;
+	padding: 0 .5em;
+}
+
+tr.odd {
+	background-color: #dfdfdf;
+}
+
+dl {
+	margin: 0; 
+  padding: 0; 
+  border-left:1px solid #666; 
+  border-right:1px solid #666;
+	background: #efefef;
+}
+
+dd {
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	/*border-top: 1px solid #fff;*/
+}
+
+dt {
+	margin:0; 
+	padding:0.4em; 
+	text-align:center; 
+	font-size: 116%; 
+	font-weight:bold; 
+	background: #efefef;
+}
+
+#show {
+	width: 15em;
+}
+
+.top {
+	display: block;
+	background: transparent;
+	font-size: 1px;
+}
+
+.bottom {
+	display: block;
+	background: transparent;
+	font-size: 1px;
+}
+
+.b1, .b2, .b3, .b4 {
+	display: block;
+	/* hide overflow:hidden from IE5/Mac */
+	/* \*/
+	overflow: hidden;
+	/* */
+}
+
+.b1, .b2, .b3 {height:1px;}
+
+.b2, .b3, .b4 {
+	background: #efefef;
+	border-left: 1px solid #666;
+	border-right: 1px solid #666;
+}
+
+.b1 {margin:0 5px; background:#666;}
+.b2 {margin:0 3px; border-width:0 2px;}
+.b3 {margin:0 2px;}
+.b4 {height:2px; margin:0 1px;}

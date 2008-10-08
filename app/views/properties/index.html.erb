@@ -10,7 +10,7 @@
   </tr>
 
 <% for property in @properties %>
-  <tr>
+  <tr class="<%= cycle("even", "odd") %>">
     <td><%= link_to h(property.name), property %></td>
     <td><%=h property.street %></td>
     <td><%=h property.city %></td>
@@ -22,6 +22,4 @@
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New property', new_property_path %>
+<%= button_to('New property', '', :onclick => "window.location = \"#{new_property_path}\";return false") %>
