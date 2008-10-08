@@ -3,7 +3,9 @@
 one:
   property: one
   name: MyString
+  capacity: 2
 
 two:
   property: one
   name: MyString
+  capacity: 1
