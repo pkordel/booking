@@ -1,15 +1,9 @@
-<h1>New room</h1>
-
-<% form_for([@property, @room]) do |f| %>
+<% form_for([@property,@room]) do |f| %>
   <%= f.error_messages %>
-
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-  <p>
-    <%= f.submit "Create" %>
-  </p>
+  <fieldset id="room">
+		<legend>Add room to <%= @property.name %></legend>
+   	<%= f.label :name %><%= f.text_field :name %><br />
+	  <%= f.submit "Create", :class => 'button' %>
+		<%= button_to('Cancel', '', :class => "button",:onclick => "window.location = \"#{property_path(@property)}\";return false") %>
+  </fieldset>
 <% end %>
-
-<%= link_to 'Back', property_rooms_path(@property) %>

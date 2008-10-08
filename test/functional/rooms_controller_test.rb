@@ -22,7 +22,7 @@ class RoomsControllerTest < ActionController::TestCase
       post :create, :room => { }, :property_id => @property
     end
   
-    assert_redirected_to property_room_path(@property, assigns(:room))
+    assert_redirected_to property_path(@property)
   end
   
   def test_should_show_room
@@ -37,7 +37,7 @@ class RoomsControllerTest < ActionController::TestCase
   
   def test_should_update_room
     put :update, :id => rooms(:one).id, :room => { }, :property_id => @property
-    assert_redirected_to property_room_path(@property, assigns(:room))
+    assert_redirected_to property_path(@property)
   end
   
   def test_should_destroy_room
@@ -45,6 +45,6 @@ class RoomsControllerTest < ActionController::TestCase
       delete :destroy, :id => rooms(:one).id, :property_id => @property
     end
   
-    assert_redirected_to property_rooms_path(@property)
+    assert_redirected_to property_path(@property)
   end
 end
