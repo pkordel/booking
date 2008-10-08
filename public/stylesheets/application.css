@@ -145,7 +145,7 @@ label {
 }
 
 table {
-	width: 90%;
+	width: 70%;
 	line-height: 1.5em;
 	border: 0;
 }
@@ -154,6 +154,7 @@ th {
 	text-align: left;
 	border: 0;
 	padding: 0 .5em;
+	background-color: #cccc99;
 }
 
 tr {
