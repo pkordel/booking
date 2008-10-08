@@ -32,7 +32,7 @@ class PropertiesControllerTest < ActionController::TestCase
 
   def test_should_update_property
     put :update, :id => properties(:one).id, :property => { }
-    assert_redirected_to property_path(assigns(:property))
+    assert_redirected_to properties_path
   end
 
   def test_should_destroy_property
