@@ -1,0 +1,10 @@
+<div id="<%= dom_id(person) %>" class="person">
+	<dl>
+		<dt><%=h person.name %></dt>
+		<dd><%=h person.email %></dd>
+		<dd><small>
+		<%= link_to "[ edit ]", edit_person_path(person) %> 
+		<%= link_to "[ back ]", people_path %>
+		</small></dd>
+	</dl>
+</div>

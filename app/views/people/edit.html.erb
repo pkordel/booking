@@ -1,0 +1,10 @@
+<% form_for(@person) do |f| %>
+  <%= f.error_messages %>
+  <fieldset id="person">
+		<legend>Edit <%= @person.name %></legend>
+   	<%= f.label :name %><%= f.text_field :name %>
+		<%= f.label :email %><%= f.text_field :email %><br />
+	  <%= f.submit "Update", :class => 'button' %>
+		<%= button_to('Cancel', '', :class => "button",:onclick => "window.location = \"#{people_path}\";return false") %>
+  </fieldset>
+<% end %>

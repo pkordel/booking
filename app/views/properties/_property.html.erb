@@ -1,0 +1,12 @@
+<div id="<%= dom_id(property) %>" class="property">
+	<dl>
+		<dt><%=h @property.name %></dt>
+		<dd><%=h @property.street %></dd>
+		<dd><%=h @property.postalcode %> <%=h @property.city %></dd>
+		<dd><small>
+		<%= link_to "[ edit ]", edit_property_path(@property) %> 
+		<%= link_to "[ add room ]", new_property_room_path(@property) %> 
+		<%= link_to "[ back ]", properties_path %>
+		</small></dd>
+	</dl>
+</div>

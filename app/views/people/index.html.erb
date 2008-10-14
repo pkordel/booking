@@ -1,0 +1,19 @@
+<table>
+  <tr>
+    <th>Person</th>
+    <th>Email</th>
+		<th>&nbsp;</th>
+		<th>&nbsp;</th>
+  </tr>
+
+<% for person in @people %>
+  <tr class="<%= cycle("even", "odd") %>">
+    <td><%= link_to h(person.name), person %></td>
+    <td><%=h person.email %></td>
+    <td><%= link_to image_tag("building_edit.png", :class => ""), edit_person_path(person), { :title => "Edit person" } %></td>
+    <td><%= link_to image_tag("building_delete.png", :class => ""), person, { :confirm => 'Are you sure?', :method => :delete, :title => "Delete person" } %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= button_to('New person', '', :onclick => "window.location = \"#{new_person_path}\";return false") %>

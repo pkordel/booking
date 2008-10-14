@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :people
 
   map.resources :properties, :has_many => [ :rooms ]
 
