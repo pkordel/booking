@@ -4,6 +4,6 @@ class Room < ActiveRecord::Base
   has_many :people, :through => :bookings
   
   def available
-    capacity - bookings.active.size
+    capacity - bookings.active.count
   end
 end

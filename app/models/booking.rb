@@ -3,6 +3,6 @@ class Booking < ActiveRecord::Base
   belongs_to :person
   
   # This allows us to say Booking.active and @booking.active and 
-  # receive an array of all bookings that end in the future.
+  # receive an array of all bookings that end on a given date.
   named_scope :active, lambda { |*args| {:conditions => ["end_date > ?", (args.first || Time.now)]} }
 end
