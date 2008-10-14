@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class RoomTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  def test_truth
-    assert true
+  def setup
+    @room = rooms(:one)
+  end
+  def test_should_destroy_dependents
+    assert_equal(2, @room.bookings.size)
+    Room.destroy(@room)
+    assert_equal(0, @room.bookings.size)
   end
 end

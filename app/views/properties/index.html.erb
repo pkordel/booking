@@ -7,17 +7,22 @@
 		<th>Rooms</th>
 		<th>&nbsp;</th>
 		<th>&nbsp;</th>
+		<th>&nbsp;</th>
   </tr>
 
 <% for property in @properties %>
   <tr class="<%= cycle("even", "odd") %>">
-    <td><%= link_to h(property.name), property %></td>
+    <td><%= property.name %></td>
     <td><%=h property.street %></td>
     <td><%=h property.city %></td>
     <td><%=h property.postalcode %></td>
 		<td><%= property.rooms.size %></td>
-    <td><%= link_to image_tag("building_edit.png", :class => ""), edit_property_path(property), { :title => "Edit property" } %></td>
-    <td><%= link_to image_tag("building_delete.png", :class => ""), property, { :confirm => 'Are you sure?', :method => :delete, :title => "Delete property" } %></td>
+		<td><%= link_to image_tag("zoom.png", :class => ""), 
+						property, { :title => "View property" } %></td>
+    <td><%= link_to image_tag("building_edit.png", :class => ""), 
+						edit_property_path(property), { :title => "Edit property" } %></td>
+    <td><%= link_to image_tag("building_delete.png", :class => ""), 
+						property, { :confirm => 'Are you sure?', :method => :delete, :title => "Delete property" } %></td>
   </tr>
 <% end %>
 </table>

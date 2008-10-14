@@ -63,7 +63,7 @@ class BookingsController < ApplicationController
     respond_to do |format|
       if @booking.update_attributes(params[:booking])
         flash[:notice] = 'Booking was successfully updated.'
-        format.html { redirect_to(@booking) }
+        format.html { redirect_to property_room_bookings_url(@property, @room) }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -79,7 +79,7 @@ class BookingsController < ApplicationController
     @booking.destroy
 
     respond_to do |format|
-      format.html { redirect_to(bookings_url) }
+      format.html { redirect_to property_room_bookings_url(@property, @room) }
       format.xml  { head :ok }
     end
   end

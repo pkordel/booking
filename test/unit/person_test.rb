@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class PersonTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  def test_truth
-    assert true
+  def setup
+    @person = people(:one)
+  end
+  def test_should_destroy_dependents
+    assert_equal(2, @person.bookings.size)
+    Person.destroy(@person)
+    assert_equal(0, @person.bookings.size)
   end
 end

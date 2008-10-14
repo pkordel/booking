@@ -5,6 +5,6 @@
    	<%= f.label :start_date %><%= f.datetime_select :start_date %>
 		<%= f.label :end_date %><%= f.datetime_select :end_date %><br />
 	  <%= f.submit "Create", :class => 'button' %>
-		<%= button_to('Cancel', '', :class => "button",:onclick => "window.location = \"#{property_path(@room.property)}\";return false") %>
+		<%= button_to('Cancel', '', :class => "button",:onclick => "window.location = \"#{property_room_bookings_path(@property,@room)}\";return false") %>
   </fieldset>
 <% end %>

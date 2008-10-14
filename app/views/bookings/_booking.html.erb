@@ -1,11 +1,11 @@
 <div id="<%= dom_id(booking) %>" class="booking">
 	<dl>
 		<dt><%=h booking.room.name %></dt>
-		<dd><%=h booking.start_date %></dd>
-		<dd><%=h booking.end_date %></dd>
+		<dd>Start: <%=h booking.start_date.to_s :short %></dd>
+		<dd>End: <%=h booking.end_date.to_s :short %></dd>
 		<dd><small>
-		<%= link_to "[ edit ]", edit_room_booking_path(@room, booking) %> 
-		<%= link_to '[ delete ]', room_booking_path(@room, booking), :confirm => 'Are you sure?', :method => :delete %>
+		<%= link_to "[ edit ]", edit_property_room_booking_path(@property, @room, booking) %> 
+		<%= link_to '[ delete ]', property_room_booking_path(@property, @room, booking), :confirm => 'Are you sure?', :method => :delete %>
 		</small></dd>
 	</dl>
 </div>

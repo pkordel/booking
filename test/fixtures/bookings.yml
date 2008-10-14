@@ -1,13 +1,13 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  room: one(Room)
-  person: one(Person)
+  room: one
+  person: one
   start_date: 2008-10-14 11:07:50
   end_date: 2008-10-14 11:07:50
 
 two:
-  room: one(Room)
-  person: one(Person)
+  room: one
+  person: one
   start_date: 2008-10-14 11:07:50
   end_date: 2008-10-14 11:07:50

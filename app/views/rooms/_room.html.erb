@@ -1,10 +1,11 @@
 	<div id="<%= dom_id(room) %>" class="room">
 		<dl>
 			<dt><%=h room.name %></dt>
-			<dd><%=h room.capacity %></dd>
+			<dd>Capacity: <%=h room.capacity %></dd>
 			<dd><small>
 			<%= link_to "[ edit ]", edit_property_room_path(@property, room) %> 
 			<%= link_to "[ add booking ]", new_property_room_booking_path(@property, room) %> 
+			<%= link_to "[ show bookings ]", property_room_bookings_path(@property, room) %> 
 			<%= link_to '[ delete ]', property_room_path(@property, room), :confirm => 'Are you sure?', :method => :delete %>
 			</small></dd>
 		</dl>
