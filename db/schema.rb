@@ -14,8 +14,8 @@ ActiveRecord::Schema.define(:version => 20081014090750) do
   create_table "bookings", :force => true do |t|
     t.integer  "room_id"
     t.integer  "person_id"
-    t.datetime "start_date", :default => '2008-10-14 13:00:00'
-    t.datetime "end_date",   :default => '2008-10-14 13:00:00'
+    t.datetime "start_date"
+    t.datetime "end_date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

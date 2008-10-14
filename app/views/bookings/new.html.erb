@@ -2,8 +2,12 @@
   <%= f.error_messages %>
   <fieldset id="booking">
 		<legend>Add booking to <%= @room.name %></legend>
-   	<%= f.label :start_date %><%= f.datetime_select :start_date, :minute_step => 15 %>
-		<%= f.label :end_date %><%= f.datetime_select :end_date, :minute_step => 15  %><br />
+   	<%= f.label :start_date %><%= f.datetime_select :start_date, 
+																										:default => 24.hours.from_now, 
+																										:minute_step => 15 %>
+		<%= f.label :end_date %><%= f.datetime_select :end_date, 
+																									:default => 24.hours.from_now, 
+																									:minute_step => 15 %><br />
 	  <%= f.submit "Create", :class => 'button' %>
 		<%= button_to('Cancel', '', :class => "button",:onclick => "window.location = \"#{property_room_bookings_path(@property,@room)}\";return false") %>
   </fieldset>
