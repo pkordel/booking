@@ -5,7 +5,8 @@
 		<dd>End: <%=h booking.end_date.to_s :short %></dd>
 		<dd><small>
 		<%= link_to "[ edit ]", edit_property_room_booking_path(@property, @room, booking) %> 
-		<%= link_to '[ delete ]', property_room_booking_path(@property, @room, booking), :confirm => 'Are you sure?', :method => :delete %>
+		<%= link_to '[ delete ]', property_room_booking_path(@property, @room, booking), :confirm => 'Are you sure?', :method => :delete %> 
+		<%= link_to "[ back ]", property_room_bookings_path(@property, @room) %> 
 		</small></dd>
 	</dl>
 </div>

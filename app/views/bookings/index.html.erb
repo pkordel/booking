@@ -1,6 +1,7 @@
 <table>
   <tr>
-    <th>Room</th>
+    <th>Property</th>
+		<th>Room</th>
     <th>Person</th>
     <th>Start date</th>
     <th>End date</th>
@@ -10,7 +11,9 @@
 
 <% for booking in @bookings %>
   <tr class="<%= cycle("even", "odd") %>">
-    <td><%= link_to h(booking.room.name), 
+    <td><%= link_to h(booking.room.property.name), 
+						property_path(@property) %></td>
+		<td><%= link_to h(booking.room.name), 
 						property_room_booking_path(@property, @room, booking) %></td>
     <td><%=h booking.person.name if booking.person %></td>
     <td><%=h booking.start_date.to_s :short %></td>

@@ -9,4 +9,9 @@ class RoomTest < ActiveSupport::TestCase
     Room.destroy(@room)
     assert_equal(0, @room.bookings.size)
   end
+  def test_should_show_available
+    assert_equal(2, @room.available)
+    @room.bookings.first.update_attributes(:end_date => 1.day.from_now)
+    assert_equal(1, @room.available)
+  end
 end
