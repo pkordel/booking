@@ -2,7 +2,8 @@
   <%= f.error_messages %>
   <fieldset id="room">
 		<legend>Add room to <%= @property.name %></legend>
-   	<%= f.label :name %><%= f.text_field :name %><br />
+   	<%= f.label :name %><%= f.text_field :name %>
+		<%= f.label :capacity %><%= f.text_field :capacity %><br />
 	  <%= f.submit "Create", :class => 'button' %>
 		<%= button_to('Cancel', '', :class => "button",:onclick => "window.location = \"#{property_path(@property)}\";return false") %>
   </fieldset>
