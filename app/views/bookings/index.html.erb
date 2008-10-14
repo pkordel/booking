@@ -1,0 +1,26 @@
+<h1>Listing bookings</h1>
+
+<table>
+  <tr>
+    <th>Room</th>
+    <th>Person</th>
+    <th>Start date</th>
+    <th>End date</th>
+  </tr>
+
+<% for booking in @bookings %>
+  <tr>
+    <td><%=h booking.room.name %></td>
+    <td><%=h booking.person.name %></td>
+    <td><%=h booking.start_date %></td>
+    <td><%=h booking.end_date %></td>
+    <td><%= link_to 'Show', property_room_booking_path(@property, @room) %></td>
+    <td><%= link_to 'Edit', edit_property_room_booking_path(@property, @room, booking) %></td>
+    <td><%= link_to 'Destroy', property_room_booking(@property, @room, booking), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New booking', new_property_room_booking_path(@property, @room) %>

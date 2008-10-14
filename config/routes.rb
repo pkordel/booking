@@ -1,7 +1,18 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :people
 
-  map.resources :properties, :has_many => [ :rooms ]
+  map.resources :people do |person|
+    person.resources :bookings
+  end
+  
+  map.resources :rooms do |room|
+    room.resources :bookings
+  end
+
+  map.resources :properties do |property|
+    property.resources :rooms do |room|
+      room.resources :bookings
+    end
+  end
 
   # Sample of named route:
   #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
