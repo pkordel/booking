@@ -6,4 +6,8 @@ class Room < ActiveRecord::Base
   def available
     capacity - bookings.active.count
   end
+  
+  def active_bookings(start_date=nil, end_date=nil)
+    bookings.active(start_date, end_date)
+  end
 end
