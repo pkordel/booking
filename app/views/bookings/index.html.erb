@@ -28,5 +28,9 @@
 <% end %>
 </table>
 
+<div id="calendar">
+	<%= @calendar %>
+</div>
+
 <%= button_to('New booking', '', 
 		:onclick => "window.location = \"#{new_property_room_booking_path(@property, @room)}\";return false") %>

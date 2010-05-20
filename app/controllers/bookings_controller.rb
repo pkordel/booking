@@ -1,10 +1,28 @@
 class BookingsController < ApplicationController
+  include CalendarHelper
   before_filter :get_room
   # GET /bookings
   # GET /bookings.xml
   def index
     @bookings = @room.bookings.find(:all)
-
+    @year = Date.today.year
+    @month = Date.today.month
+    
+    listOfSpecialDays = [1.day.from_now.day]
+    listOfSpecialDays = []
+    
+    @calendar = calendar(	:year => @year, :month => @month, 
+  							 	:table_class => "calendar",
+      					 	:month_name_class => "monthName",
+      						:day_name_class => "dayName",
+      						:day_class => "day") do |d|
+      if d.mday == 23          # (days that are in the array listOfSpecialDays) one CSS class,
+        [d.mday, {:class => "specialDay"}]      # "specialDay", and gives the rest of the days another CSS class,
+          else                                  # "normalDay". You can also use this highlight today differently
+        [d.mday, {:class => "normalDay"}]       # from the rest of the days, etc.
+      end
+    end
+    
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @bookings }
